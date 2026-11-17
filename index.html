@@ -127,76 +127,7 @@
     </div>
 
     <script>
-        function downloadVideo() {
-            const url = document.getElementById('videoUrl').value.trim();
-            const loadingText = document.getElementById('loadingText');
-            const resultBox = document.getElementById('resultBox');
-            
-            if(!url) {
-                alert("Please enter a valid video URL first!");
-                return;
-            }
-
-            loadingText.style.display = "block";
-            resultBox.style.display = "none";
-
-            const data = JSON.stringify({
-                url: url,
-                format: '1080p'
-            });
-
-            const xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
-
-            xhr.addEventListener("readystatechange", function () {
-                if (this.readyState === this.DONE) {
-                    loadingText.style.display = "none";
-                    
-                    try {
-                        const response = JSON.parse(this.responseText);
-                        if (response) { 
-                            resultBox.style.display = "block";
-                            document.getElementById('videoTitle').innerText = "Video download ke liye taiyar hai!";
-                            document.getElementById('downloadBtn').href = response.download_url || response.url; 
-                        } else {
-                            alert("Video fetch nahi ho payi.");
-                        }
-                    } catch (e) {
-                        alert("Technical error aa gaya.");
-                    }
-                }
-            });
-
-            xhr.open("POST", "https://instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com/youtube/download");
-            xhr.setRequestHeader("content-type", "application/json");
-            
-            // --- YAHAN APNI RAPIDAPI KEY DALEN (QUOTES KE ANDAR) ---
-            xhr.setRequestHeader("x-rapidapi-key", ;const data = JSON.stringify({
-	url: 'https://www.youtube.com/watch?v=6dG1WWjew8s',
-	format: '1080p'
-});
-
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener('readystatechange', function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
-});
-
-xhr.open('POST', 'https://instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com/youtube/download');
-xhr.setRequestHeader('x-rapidapi-key', 'Not Authorized');
-xhr.setRequestHeader('x-rapidapi-host', 'instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com');
-xhr.setRequestHeader('Content-Type', 'application/json');
-
-xhr.send(data); 
-            
-            xhr.setRequestHeader("x-rapidapi-host", "instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com");
-
-            xhr.send(data);
-        }
-    </script>
+  
 
 </body>
 </html>
