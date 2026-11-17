@@ -171,7 +171,26 @@
             xhr.setRequestHeader("content-type", "application/json");
             
             // --- YAHAN APNI RAPIDAPI KEY DALEN (QUOTES KE ANDAR) ---
-            xhr.setRequestHeader("x-rapidapi-key", "APNI_ASLI_API_KEY_YAHAN_DAALEN"); 
+            xhr.setRequestHeader("x-rapidapi-key", ;const data = JSON.stringify({
+	url: 'https://www.youtube.com/watch?v=6dG1WWjew8s',
+	format: '1080p'
+});
+
+const xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener('readystatechange', function () {
+	if (this.readyState === this.DONE) {
+		console.log(this.responseText);
+	}
+});
+
+xhr.open('POST', 'https://instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com/youtube/download');
+xhr.setRequestHeader('x-rapidapi-key', 'Not Authorized');
+xhr.setRequestHeader('x-rapidapi-host', 'instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com');
+xhr.setRequestHeader('Content-Type', 'application/json');
+
+xhr.send(data); 
             
             xhr.setRequestHeader("x-rapidapi-host", "instagram-downloader-download-instagram-videos-stories1.p.rapidapi.com");
 
